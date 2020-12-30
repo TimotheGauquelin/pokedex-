@@ -8,17 +8,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {
-    BrowserRouter as Router,
-    Route,
-    Switch
+  BrowserRouter as Router,
+  Route,
+  Switch
 } from 'react-router-dom';
 
 const Root = () => (
-    <Router>
-        <Switch>
-            <Route exact path='/' component={App} />
-        </Switch>
-    </Router>
+  <Router>
+    <Switch>
+      <Route exact path='/' component={App} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>
 );
 
 ReactDOM.render(<Root />, document.getElementById('root'));
