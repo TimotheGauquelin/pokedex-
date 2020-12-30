@@ -6,5 +6,13 @@
 .App {
 
 font-weight: 700;
+display: flex;
+flex-direction: column;
+text-align: center;
+}
 
+.button {
+  background: $color-primary;
+  color: $color-secondary;
+  margin-top: 20px;
 }
