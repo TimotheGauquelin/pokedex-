@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './stylesheets/App.scss';
 
-import { Col, Button } from 'antd';
+import { Col, Button, Row } from 'antd';
+import { Input } from 'antd';
+
 
 class App extends Component {
 
@@ -13,15 +15,31 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <Col className="App">
-        <h1>Que recherchez-vous ?</h1>
-        <h2>Un pokemon, une attaque, un lieu ?</h2>
 
-        <Button size="large" className="button">Pokedex</Button>
-        <Button size="large" disabled className="button">Attaque</Button>
-        <Button size="large" disabled className="button">Compétence</Button>
-      </Col>
+    const { Search } = Input;
+
+    const onSearch = value => console.log(value);
+
+    return (
+      <Row>
+        <Col className="App">
+          <h1>Que recherchez-vous ?</h1>
+          <h2>Un pokemon, une attaque, un lieu ?</h2>
+          <Search
+            placeholder="Que recherchez-vous ?"
+            allowClear
+            enterButton="Entrer"
+            size="large"
+            onSearch={onSearch}
+          />
+          <Button size="large" className="button">Pokedex</Button>
+          <Button size="large" disabled className="button">Attaque</Button>
+          <Button size="large" disabled className="button">Compétence</Button>
+        </Col>
+
+
+
+      </Row>
     )
   }
 }
